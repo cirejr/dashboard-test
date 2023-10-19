@@ -1,14 +1,12 @@
-'use-client'
-
+import Link from 'next/link'
 import { LuLayoutDashboard, LuLogOut } from 'react-icons/lu'
 import { HiOutlineSpeakerWave } from 'react-icons/hi2'
 import { LiaUsersSolid, LiaCogSolid } from 'react-icons/lia'
 import { BsCardList } from 'react-icons/bs'
-import { GiCardExchange } from 'react-icons/gi'
 import { FaRotate } from 'react-icons/fa6'
 
-import Link from 'next/link'
-
+import logo from "../../../public/assets/logo.png"
+import Image from 'next/image'
 
 export const sidebarMenu = [
 	{
@@ -87,8 +85,9 @@ export default function SideBar() {
 	console.log(sidebarMenu.map(navItem => <navItem.iconName />))
 	return (
 		<main className="flex flex-col md:col-span-2 grid-cols-none relative">
+			<Image src={logo} alt='DevPhantom' width={50} height={50} className='mt-8 mx-8 w-auto bg-black' />
 			<SideBarMenu />
-			<SideBarBottomMenu className="items-end justify-end align-bottom content-end" />
+			<SideBarBottomMenu />
 		</main>
 	);
 }
