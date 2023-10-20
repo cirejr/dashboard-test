@@ -1,8 +1,10 @@
-"use-client"
+
+import Table from "@/components/dashboard/Table";
+
 export default function () {
 	return (
-		<div>
-			This is the great dahsbord
-		</div>
+		<main>
+			<Table />
+		</main>
 	);
 }
