@@ -53,13 +53,15 @@ function SideBarMenu() {
 	return (
 		<>
 			{sidebarMenu.map(navItem => (
-				<Link key={navItem.pageName}
-					href={`/${navItem.link}`}
-					className='flex items-center space-x-3 hover:transition hover:delay-100 hover:bg-emerald-200 hover:bg-opacity-20 hover:rounded-lg hover:border-l-2 hover:border-green-700 hover:text-emerald-500 px-8 py-3'
-				>
-					{navItem.iconName}
-					<p className=''>{navItem.pageName}</p>
-				</Link>
+				<div className='flex justify-center text-slate-500 hover:transition hover:delay-100 hover:bg-emerald-200 hover:bg-opacity-20 hover:rounded-r-lg hover:border-l-4 hover:border-green-700 hover:text-emerald-500 py-3'>
+					<Link key={navItem.pageName}
+						href={`/${navItem.link}`}
+						className='flex items-center align-middle space-x-3 w-full px-2 md:px-0 lg:w-2/3'
+					>
+						{navItem.iconName}
+						<p className=''>{navItem.pageName}</p>
+					</Link>
+				</div>
 			))}
 		</>
 	)
@@ -69,13 +71,15 @@ function SideBarBottomMenu() {
 	return (
 		<main className='mt-10 absolute bottom-10 w-full '>
 			{sidebarBottomMenu.map(navItem => (
-				<Link key={navItem.pageName}
-					href={`/${navItem.link}`}
-					className='flex items-center space-x-3 hover:transition hover:delay-100 hover:bg-emerald-200 hover:bg-opacity-20 hover:rounded-lg hover:border-l-2 hover:border-green-700 hover:text-emerald-500 px-8 py-3'
-				>
-					{navItem.iconName}
-					<p className=''>{navItem.pageName}</p>
-				</Link>
+				<div className='flex justify-center text-slate-500 hover:transition hover:delay-100 hover:bg-emerald-200 hover:bg-opacity-20 hover:rounded-r-lg hover:border-l-4 hover:border-green-700 hover:text-emerald-500 py-3'>
+					<Link key={navItem.pageName}
+						href={`/${navItem.link}`}
+						className='flex items-center align-middle space-x-3 w-full px-2 md:px-0 lg:w-2/3'
+					>
+						{navItem.iconName}
+						<p className=''>{navItem.pageName}</p>
+					</Link>
+				</div>
 			))}
 		</main>
 	)
@@ -85,7 +89,7 @@ export default function SideBar() {
 	console.log(sidebarMenu.map(navItem => <navItem.iconName />))
 	return (
 		<main className="flex flex-col md:col-span-2 grid-cols-none relative">
-			<Image src={logo} alt='DevPhantom' width={50} height={50} className='mt-8 mx-8 w-auto bg-black' />
+			<Image src={logo} alt='DevPhantom' width={80} height={80} className='my-8 self-center' />
 			<SideBarMenu />
 			<SideBarBottomMenu />
 		</main>
