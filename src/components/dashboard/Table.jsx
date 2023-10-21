@@ -64,12 +64,12 @@ export default function Table() {
 				filters={filters}
 				globalFilterFields={['title']}
 				paginator
-				rows={7}
+				rows={5}
 				showGridlines
 				stripedRows
-				selectionMode='multiple'
+				selectionMode='checkbox'
 				selection={todoSelected}
-				onSelectionChange={(e) => setSelectedProducts(e.value)}
+				onSelectionChange={(e) => setTodoSelected(e.value)}
 				onRowClick={handleRowClick}
 				emptyMessage="No Todos found"
 				className='min-w-full bg-white p-2 rounded-lg mt-4 shadow-lg'
