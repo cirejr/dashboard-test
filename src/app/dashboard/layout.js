@@ -1,18 +1,38 @@
 
+"use client"
 import Navbar from "@/components/dashboard/Navbar";
 import SideBar from "@/components/dashboard/SideBar";
 import '../../app/globals.css'
+import { useContext } from "react";
+import { GlobalContext } from "@/contexts/contextProvider";
 
 
 export default function Layout({children}) {
+	const { isActive } = useContext(GlobalContext)
 	return (
 		<html>
-			<body className={`grid md:grid-cols-12 w-full h-screen`}>
-				<SideBar className="md:col-span-4" />
-				<main className=" col-span-12 md:col-span-10">
+			<body className={`flex relative w-full h-screen`}>
+				{isActive ? (
+					<div className="w-72 fixed z-10 bg-white">
+						<SideBar />
+					</div>
+							) : (
+					<div className="w-0">
+						<SideBar />
+					</div>
+				)}
+				<div className={
+					`min-h-screen w-full ${ isActive ? 'md:ml-72' : 'flex-2'}`
+				}>
+					<div className="">
+						<Navbar />
+						{children}	
+					</div>
+				</div>	
+				{/* <main className=" col-span-12 md:col-span-10">
 					<Navbar />
 					{children}
-				</main>
+				</main> */}
 			</body>
 		</html>
 	);
