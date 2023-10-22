@@ -50,7 +50,7 @@ export default async function Page({ params: { id } }) {
 					<div className="flex justify-between w-full">
 						<div className="flex space-x-2 items-center">
 							<Avatar className="w-20 h-20">
-								<AvatarImage src="https://avatars.githubusercontent.com/u/46621641?v=4" />
+								<AvatarImage src="https://github.com/cirejr.png" />
 								<AvatarFallback>CJr</AvatarFallback>
 							</Avatar>
 							<div className="flex flex-col gap-1">

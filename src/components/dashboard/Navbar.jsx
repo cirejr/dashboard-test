@@ -1,6 +1,6 @@
 "use client"
 import Image from "next/image";
-import profile from '../../../public/assets/userProfile.png'
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { useContext, useEffect } from "react";
 import { AiOutlineMenu } from 'react-icons/ai'
 import { GlobalContext } from "@/contexts/contextProvider";
@@ -37,9 +37,12 @@ export default function () {
 			>
 				<AiOutlineMenu />
 			</button>
-			<div className="flex space-x-2 items-center justify-center ">
+			<div className="flex space-x-2 items-center justify-center mr-3 ">
 				<p className="text-lg font-semibold">Jean David</p>
-				<Image alt="profile pic" src={profile} className="rounded-full bg-white w-14 h-14" width={60} height={60} />
+				<Avatar>
+					<AvatarImage src="https://github.com/cirejr.png" />
+					<AvatarFallback>CJr</AvatarFallback>
+				</Avatar>
 			</div>
 
 		</main>
