@@ -50,9 +50,7 @@ export default function SideBar() {
 	const { isActive, setIsActive, screenSize } = useContext(GlobalContext)
 
 	const handleCloseSideBar = () => {
-		if (isActive && screenSize <= 900) {
-			setIsActive(false)
-		}
+		setIsActive(false)
 	}
 
 	return (

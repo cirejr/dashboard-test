@@ -3,6 +3,7 @@
 import {
 	flexRender,
 	getCoreRowModel,
+	getFacetedUniqueValues,
 	getFilteredRowModel,
 	getPaginationRowModel,
 	getSortedRowModel,
@@ -21,7 +22,6 @@ import {
 import {
 	Dialog,
 	DialogContent,
-	DialogDescription,
 	DialogFooter,
 	DialogHeader,
 	DialogTitle,
@@ -41,6 +41,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useState } from "react"
+import { DataTableToolbar } from "./data-table-toolbar"
 
 export function DataTable({ data, columns }) {
 	const [sorting, setSorting] = useState([])
@@ -56,6 +57,7 @@ export function DataTable({ data, columns }) {
 		onColumnFiltersChange: setColumnFilters,
 		getFilteredRowModel: getFilteredRowModel(),
 		onRowSelectionChange: setRowSelection,
+		getFacetedUniqueValues: getFacetedUniqueValues(),
 		state: {
 			sorting,
 			columnFilters,
@@ -63,20 +65,14 @@ export function DataTable({ data, columns }) {
 		},
 	})
 
+	console.log("data in data-table is :", data)
+
 	return (
 		<>
 			{/* Filter section */}
-			<section className="bg-white p-5 rounded-md mb-5">
-				<div className="flex items-center py-4">
-					<Input
-						placeholder="Filter names ..."
-						value={(table.getColumn("name")?.getFilterValue()) ?? ""}
-						onChange={(event) =>
-							table.getColumn("name")?.setFilterValue(event.target.value)
-						}
-						className="max-w-sm"
-					/>
-				</div>
+			<section className="bg-white p-5 rounded-md mb-5 space-y-3">
+				<p className="font-semibold">Recherches d'influenceurs</p>
+				<DataTableToolbar table={table} data={data} />
 			</section>
 
 			{/* main table section */}
@@ -132,7 +128,7 @@ export function DataTable({ data, columns }) {
 
 				<div className="flex justify-between items-center pt-3">
 
-					{/* Popup section */}
+					{/* Moaal section */}
 					<CustomModal table={table} />
 
 					{/* Pagination */}

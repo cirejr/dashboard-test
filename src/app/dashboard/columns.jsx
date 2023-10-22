@@ -84,7 +84,7 @@ export const columns = [
 						<DropdownMenuSeparator />
 						<DropdownMenuItem>View customer</DropdownMenuItem>
 						<DropdownMenuItem>
-							<Link href={`./users/${user.id}`}>
+							<Link href={`./dashboard/users/${user.id}`}>
 								detail du user
 							</Link>
 						</DropdownMenuItem>

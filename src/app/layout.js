@@ -1,10 +1,11 @@
-import { Inter } from 'next/font/google'
+import { Inter as FontSans } from "next/font/google"
 import './globals.css'
 import ContextProvider from '@/contexts/contextProvider'
+import { cn } from "@/lib/utils"
  
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
+export const fontSans = FontSans({
+  subsets: ["latin"],
+  variable: "--font-sans",
 })
 
 export const metadata = {
@@ -16,7 +17,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
 		<ContextProvider>
-     		<body>{children}</body>	
+     		<body className={cn(
+          "font-sans antialiased",
+          fontSans.variable
+        )}>{children}</body>	
 		</ContextProvider>
     </html>
   )

@@ -22,17 +22,13 @@ export default function Layout({children}) {
 					</div>
 				)}
 				<div className={
-					`min-h-screen w-full ${ isActive ? 'md:ml-72' : 'flex-2'}`
+					`min-h-screen w-full ${ isActive ? 'md:ml-72 md:w-[calc(100%-288px)]' : 'flex-2'}`
 				}>
 					<div className="">
 						<Navbar />
 						{children}	
 					</div>
 				</div>	
-				{/* <main className=" col-span-12 md:col-span-10">
-					<Navbar />
-					{children}
-				</main> */}
 			</body>
 		</html>
 	);

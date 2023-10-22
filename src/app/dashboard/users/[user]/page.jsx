@@ -7,12 +7,15 @@ import {
 	CardTitle,
 } from "@/components/ui/card"
 
-export default function Page({ users }) {
+export default function Page({ params: { user } }) {
+
+	console.log("id is: ", user)
+
 	return (
 		<>
 			<Card>
 				<CardHeader>
-					<CardTitle>Card Title</CardTitle>
+					<CardTitle>Card Title id is {user} </CardTitle>
 					<CardDescription>Card Description</CardDescription>
 				</CardHeader>
 				<CardContent>
@@ -27,21 +30,4 @@ export default function Page({ users }) {
 	);
 }
 
-export async function getStaticPaths() {
-	return {
-		paths: [
-			{
-				params: {
-					name: 'next.js',
-				},
-			},
-		],
-		fallback: true,
-	}
-}
 
-/* export async function getServerSideProps() {
-	const res = await fetch('https://jsonplaceholder.typicode.com/users')
-	const users = await res.json()
-	return { props: { users } }
-} */
