@@ -16,7 +16,7 @@ export function DataTableToolbar({ table, data }) {
 
 	return (
 		<div className="flex items-center justify-between">
-			<div className="flex flex-wrap space-y-3 sm:space-y-0 flex-1 items-center space-x-2">
+			<div className="flex flex-wrap space-y-3 sm:space-y-0 flex-1 items-center space-x-2 md:gap-8">
 				<Input
 					placeholder="Filter names"
 					value={(table.getColumn("name")?.getFilterValue()) ?? ""}
@@ -30,7 +30,6 @@ export function DataTableToolbar({ table, data }) {
 						column={table.getColumn("username")}
 						title="Username"
 						options={usernames}
-						className='m-0'
 					/>
 				)}
 				{table.getColumn("email") && (
