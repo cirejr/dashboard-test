@@ -9,9 +9,10 @@ import { GlobalContext } from "@/contexts/contextProvider";
 
 export default function Layout({children}) {
 	const { isActive } = useContext(GlobalContext)
+
 	return (
 		<html>
-			<body className={`flex relative w-full h-screen`}>
+			<body className="flex relative w-full h-screen">
 				{isActive ? (
 					<div className="w-72 fixed z-10 bg-white">
 						<SideBar />

@@ -1,8 +1,8 @@
-import { DataTable } from "@/components/dashboard/table-components/data-table"
+import { DataTable } from "@/components/dashboard/table/data-table"
 import { columns } from "./columns"
 
 
-async function getUsersData() {
+export async function getUsersData() {
 	const res = await fetch('https://jsonplaceholder.typicode.com/users')
 
 	if (!res.ok) {

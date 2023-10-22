@@ -6,37 +6,38 @@ import { Table } from "@tanstack/react-table"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 
-import { priorities, statuses } from "../data/data"
 import { DataTableFacetedFilter } from "./data-table-faceted-filter"
 
 
 export function DataTableToolbar({ table, data }) {
 	const isFiltered = table.getState().columnFilters.length > 0
-	const usernames = data.map(user => user.usernames)
+	const usernames = data.map(user => user.username)
+	const emails = data.map(user => user.email)
 
 	return (
 		<div className="flex items-center justify-between">
-			<div className="flex flex-1 items-center space-x-2">
+			<div className="flex flex-wrap space-y-3 sm:space-y-0 flex-1 items-center space-x-2">
 				<Input
 					placeholder="Filter names"
 					value={(table.getColumn("name")?.getFilterValue()) ?? ""}
 					onChange={(event) =>
 						table.getColumn("name")?.setFilterValue(event.target.value)
 					}
-					className="h-8 w-[150px] lg:w-[250px]"
+					className="h-8 w-[150px] lg:w-[250px] mt-3 ml-2 sm:m-0"
 				/>
 				{table.getColumn("username") && (
 					<DataTableFacetedFilter
 						column={table.getColumn("username")}
 						title="Username"
-						options={statuses}
+						options={usernames}
+						className='m-0'
 					/>
 				)}
 				{table.getColumn("email") && (
 					<DataTableFacetedFilter
 						column={table.getColumn("email")}
 						title="Email"
-						options={priorities}
+						options={emails}
 					/>
 				)}
 				{isFiltered && (

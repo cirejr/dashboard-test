@@ -65,8 +65,6 @@ export function DataTable({ data, columns }) {
 		},
 	})
 
-	console.log("data in data-table is :", data)
-
 	return (
 		<>
 			{/* Filter section */}
@@ -157,7 +155,7 @@ export function DataTable({ data, columns }) {
 	)
 }
 
-const CustomModal = ({ table }) => {
+export const CustomModal = ({ table }) => {
 	return (
 		<Dialog>
 			<DialogTrigger>

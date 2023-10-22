@@ -23,11 +23,7 @@ import {
 } from "@/components/ui/command"
 
 
-export function DataTableFacetedFilter({
-	column,
-	title,
-	options,
-}) {
+export function DataTableFacetedFilter({ column, title, options }) {
 	const facets = column?.getFacetedUniqueValues()
 	const selectedValues = new Set(column?.getFilterValue())
 
@@ -56,14 +52,14 @@ export function DataTableFacetedFilter({
 									</Badge>
 								) : (
 									options
-										.filter((option) => selectedValues.has(option.value))
+										.filter((option) => selectedValues.has(option))
 										.map((option) => (
 											<Badge
 												variant="secondary"
-												key={option.value}
+												key={option}
 												className="rounded-sm px-1 font-normal"
 											>
-												{option.label}
+												{option}
 											</Badge>
 										))
 								)}
@@ -82,12 +78,12 @@ export function DataTableFacetedFilter({
 								const isSelected = selectedValues.has(option.value)
 								return (
 									<CommandItem
-										key={option.value}
+										key={option}
 										onSelect={() => {
 											if (isSelected) {
-												selectedValues.delete(option.value)
+												selectedValues.delete(option)
 											} else {
-												selectedValues.add(option.value)
+												selectedValues.add(option)
 											}
 											const filterValues = Array.from(selectedValues)
 											column?.setFilterValue(
@@ -105,13 +101,10 @@ export function DataTableFacetedFilter({
 										>
 											<CheckIcon className={cn("h-4 w-4")} />
 										</div>
-										{option.icon && (
-											<option.icon className="mr-2 h-4 w-4 text-muted-foreground" />
-										)}
-										<span>{option.label}</span>
-										{facets?.get(option.value) && (
+										<span>{option}</span>
+										{facets?.get(option) && (
 											<span className="ml-auto flex h-4 w-4 items-center justify-center font-mono text-xs">
-												{facets.get(option.value)}
+												{facets.get(option)}
 											</span>
 										)}
 									</CommandItem>
