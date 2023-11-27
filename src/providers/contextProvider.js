@@ -7,7 +7,7 @@ export const GlobalContext = createContext(null)
 export default function ContextProvider({ children }) {
 	const [screenSize, setScreenSize] = useState(undefined);
 	const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-	const [ isActive, setIsActive ] = useState(false);
+	const [ isActive, setIsActive ] = useState(true);
 	const [data, setData] = useState([]);
 
 	useEffect(() => {

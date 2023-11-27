@@ -1,6 +1,6 @@
 "use client"
 
-import { GlobalContext } from "@/contexts/contextProvider";
+import { GlobalContext } from "@/providers/contextProvider";
 import { stringify } from "postcss";
 import { useContext } from "react";
 

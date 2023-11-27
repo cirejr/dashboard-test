@@ -44,7 +44,7 @@ export default async function Page({ params: { id } }) {
 	console.log("special user is:", foundUser)
 
 	return (
-		<main className="p-3 bg-gray-300 h-screen">
+		<main className="p-3 bg-slate-900 pt-[100px] h-screen">
 			<Card>
 				<CardHeader >
 					<div className="flex justify-between w-full">

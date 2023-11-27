@@ -68,13 +68,13 @@ export function DataTable({ data, columns }) {
 	return (
 		<>
 			{/* Filter section */}
-			<section className="bg-white p-5 rounded-md mb-5 space-y-3">
+			<section className="bg-background p-5 rounded-md mb-5 space-y-3">
 				<p className="font-semibold">Recherches d'influenceurs</p>
 				<DataTableToolbar table={table} data={data} />
 			</section>
 
 			{/* main table section */}
-			<section className="bg-white p-5 rounded-md">
+			<section className="bg-background p-5 rounded-md">
 				<div className="flex justify-between items-center pt-3">
 					<p className="font-semibold">Liste des influenceurs <span className="text-muted-foreground text-lg">{data.length}</span></p>
 					<CustomModal table={table} />

@@ -5,7 +5,7 @@ import { MdOutlineCancel } from 'react-icons/md'
 import logo from "../../../public/assets/logo.png"
 import { sidebarMenu, sidebarBottomMenu } from '@/utils/sidebarItem'
 import { useContext, useState } from 'react'
-import { GlobalContext } from '@/contexts/contextProvider'
+import { GlobalContext } from '@/providers/contextProvider'
 
 
 function SideBarMenu({ onClick }) {

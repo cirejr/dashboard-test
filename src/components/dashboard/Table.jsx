@@ -9,7 +9,7 @@ import { FaSearchengin } from 'react-icons/fa6';
 import { BsSearch } from 'react-icons/bs';
 
 import getData from '@/services/getData';
-import { GlobalContext } from '@/contexts/contextProvider';
+import { GlobalContext } from '@/providers/contextProvider';
 import { InputSwitch } from 'primereact/inputswitch';
 
 export default function Table() {

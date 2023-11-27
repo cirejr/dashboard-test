@@ -4,17 +4,16 @@ import Navbar from "@/components/dashboard/Navbar";
 import SideBar from "@/components/dashboard/SideBar";
 import '../../app/globals.css'
 import { useContext } from "react";
-import { GlobalContext } from "@/contexts/contextProvider";
+import { GlobalContext } from "@/providers/contextProvider";
 
 
 export default function Layout({children}) {
 	const { isActive } = useContext(GlobalContext)
 
 	return (
-		<html>
-			<body className="flex relative w-full h-screen">
+			<main className="flex relative w-full h-screen">
 				{isActive ? (
-					<div className="w-72 fixed z-10 bg-white">
+					<div className="w-72 fixed z-10">
 						<SideBar />
 					</div>
 							) : (
@@ -30,7 +29,6 @@ export default function Layout({children}) {
 						{children}	
 					</div>
 				</div>	
-			</body>
-		</html>
+			</main>
 	);
 }

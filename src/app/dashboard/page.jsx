@@ -16,7 +16,7 @@ export default async function Page() {
 	const data = await getUsersData()
 
 	return (
-		<div className="py-10 px-5 bg-gray-300">
+		<div className="pt-[100px] bg-slate-900 min-h-screen px-5 ">
 			<DataTable columns={columns} data={data} />
 		</div>
 	)
